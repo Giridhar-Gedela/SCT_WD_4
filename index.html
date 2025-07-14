@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Web App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📝 To-Do App</h1>
+            <p>Organize your tasks and boost your productivity</p>
+        </div>
+
+        <div class="add-task-section">
+            <div class="task-input-group">
+                <input type="text" id="taskInput" class="task-input" placeholder="Enter your task..." maxlength="200">
+                <div class="datetime-group">
+                    <input type="date" id="taskDate" class="datetime-input">
+                    <input type="time" id="taskTime" class="datetime-input">
+                </div>
+                <button onclick="addTask()" class="add-btn">✨ Add Task</button>
+            </div>
+        </div>
+
+        <div class="tasks-section">
+            <div class="stats" id="stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalTasks">0</div>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="completedTasks">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="pendingTasks">0</div>
+                    <div class="stat-label">Pending</div>
+                </div>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterTasks('all')">All Tasks</button>
+                <button class="filter-btn" onclick="filterTasks('pending')">Pending</button>
+                <button class="filter-btn" onclick="filterTasks('completed')">Completed</button>
+                <button class="filter-btn" onclick="filterTasks('today')">Today</button>
+                <button class="filter-btn" onclick="filterTasks('overdue')">Overdue</button>
+            </div>
+
+            <div class="tasks-list" id="tasksList">
+                <div class="empty-state">
+                    <div class="empty-state-icon">📋</div>
+                    <h3>No tasks yet</h3>
+                    <p>Add your first task above to get started!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
